@@ -1,8 +1,8 @@
-AGRIPULSE RWANDA
+# AGRIPULSE RWANDA
 
 AgriPulse Rwanda is a web platform that provides real-time prices of agricultural and other products across Rwanda, helping farmers, traders, and consumers make informed decisions by giving them accurate and up-to-date market information.
 
-Objectives
+# Objectives
 
 Provide real-time pricing information for agricultural and other products in Rwanda.
 
