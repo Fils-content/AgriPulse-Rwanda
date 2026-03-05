@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriPulse Rwanda</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #2c7744);
+    color: white;
+    margin-left: 200px; /* space for sidebar */
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    padding-top: 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #ffd700;
+    color: #2c7744;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.4);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.signin-btn {
+    background: #ffd700;
+    color: #2c7744 !important;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* PAGE SECTIONS */
+.page {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.active {
+    display: block;
+}
+
+/* HOME SUB-NAV */
+.home-subnav {
+    margin: 20px 0;
+}
+
+.home-subnav button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    border: none;
+    background: #ffd700;
+    color: #2c7744;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-subnav button:hover {
+    background: white;
+}
+
+/* HOME SECTIONS */
+.home-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.home-section.active {
+    display: block;
+}
+
+/* MARKET GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    color: #2c7744;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* FORMS */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #ffd700;
+    color: #2c7744;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h3>🌾 Menu</h3>
+    <a onclick="showPage('home')">🏠 Home</a>
+    <a onclick="showPage('partnership')">🤝 Partnership</a>
+    <a onclick="showPage('contact')">📞 Contact</a>
+    <a onclick="showPage('signin')">🔐 Sign In</a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🌾 AgriPulse Rwanda</div>
+    <ul class="nav-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('partnership')">Partnership</a></li>
+        <li><a onclick="showPage('contact')">Contact Us</a></li>
+        <li><a onclick="showPage('signin')" class="signin-btn">Sign In</a></li>
+    </ul>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page">
+    <h1>🌾 AgriPulse Rwanda</h1>
+    <p>Real-Time Agricultural Market Prices Across Rwanda</p>
+
+    <div class="home-subnav">
+        <button onclick="showHomeSection('description')">Description</button>
+        <button onclick="showHomeSection('photos')">Photos</button>
+        <button onclick="showHomeSection('gardens')">Gardens</button>
+        <button onclick="showHomeSection('tools')">Tools</button>
+    </div>
+
+    <div id="description" class="home-section active">
+        <h2>Description</h2>
+        <p>AgriPulse Rwanda provides real-time market prices for agricultural products across Rwanda.</p>
+    </div>
+
+    <div id="photos" class="home-section">
+        <h2>Photos</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?farm" alt="Farm">
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?agriculture" alt="Farm">
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?crops" alt="Farm">
+            </div>
+        </div>
+    </div>
+
+    <div id="gardens" class="home-section">
+        <h2>Gardens</h2>
+        <p>Community gardens improving food security in Rwanda.</p>
+    </div>
+
+    <div id="tools" class="home-section">
+        <h2>Tools</h2>
+        <p>Agricultural tools and machinery for farmers.</p>
+    </div>
+</div>
+
+<!-- PARTNERSHIP -->
+<div id="partnership" class="page">
+    <h2>🤝 Partnership</h2>
+    <div class="form-container">
+        <input type="text" placeholder="Organization Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="How would you like to partner?"></textarea>
+        <button>Submit</button>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+    <h2>📞 Contact Us</h2>
+    <div class="form-container">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </div>
+</div>
+
+<!-- SIGNIN -->
+<div id="signin" class="page active">
+    <h2>🔐 Sign In</h2>
+    <div class="form-container">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</div>
+
+<footer>
+    © 2026 AgriPulse Rwanda | Empowering Farmers 🇷🇼
+</footer>
+
+<script>
+function showPage(pageId) {
+    let pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+
+    if (pageId !== 'home') {
+        let homeSections = document.querySelectorAll('.home-section');
+        homeSections.forEach(section => section.classList.remove('active'));
+        document.getElementById('description').classList.add('active');
+    }
+}
+
+function showHomeSection(sectionId) {
+    let sections = document.querySelectorAll('.home-section');
+    sections.forEach(section => section.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
